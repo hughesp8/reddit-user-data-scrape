@@ -43,9 +43,6 @@ def extract_submission_keywords(keyphrase):
     keywords = ",".join(keywords_list[num][1] for num in range(len(keywords_list)))
     return keywords
 
-personal_use_script = "uw1FJXIt1GijgQ"
-secret_key = "ReBJAgWJDRXMFC0fCtQ-6G4bJvw"
-
 
 def get_data(reddit, csv_reader, data_queue):    
     for i, row in csv_reader.iterrows(): 
@@ -75,11 +72,16 @@ if __name__ == '__main__':
     with open(sys.argv[1], mode='r') as inp, open(sys.argv[2], 'w') as out:
         csv_writer = csv.writer(out)
         csv_reader = pd.read_csv(inp)
+
+        personal_use_script = ""
+        secret_key = ""
+        user_agent = ""
+        username = ""
     
         reddit = praw.Reddit(client_id= personal_use_script, \
                              client_secret= secret_key, \
-                             user_agent='subsuggester.com', \
-                             username='paddyxvy', \
+                             user_agent=user_agent, \
+                             username=username, \
                              password='')
         count = 0
     
