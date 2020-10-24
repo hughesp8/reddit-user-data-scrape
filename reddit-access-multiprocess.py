@@ -1,10 +1,6 @@
-#! /usr/bin/python3
-
 import praw
 import pandas as pd
-import datetime as dt
 import yake
-from time import process_time
 import csv
 import sys
 from collections import Counter
