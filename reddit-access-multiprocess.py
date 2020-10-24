@@ -73,10 +73,10 @@ if __name__ == '__main__':
         csv_writer = csv.writer(out)
         csv_reader = pd.read_csv(inp)
 
-        personal_use_script = ""
-        secret_key = ""
-        user_agent = ""
-        username = ""
+        personal_use_script = sys.argv[3]
+        secret_key = sys.argv[4]
+        user_agent = sys.argv[5]
+        username = sys.argv[6]
     
         reddit = praw.Reddit(client_id= personal_use_script, \
                              client_secret= secret_key, \
